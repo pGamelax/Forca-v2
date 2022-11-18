@@ -1,0 +1,18 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<h4>Nova Pergunta</h4>
+<div class="card">
+    <div class="card-body">
+        <form action="/game/questions/add/new" method="POST">
+            <label for="question" class="mt-1">Pergunta:</label>
+            <input type="text" name="question" placeholder="Escreva uma pergunta" class="form-control mt-1">
+            <label for="answer" class="mt-1">Pergunta:</label>
+            <input type="text" name="answer" placeholder="Escreva a respostas" class="form-control mt-1">
+            <button class="btn btn-success mt-4" type="submit">Adicionar pergunta</button>
+        </form>
+    </div>
+</div>

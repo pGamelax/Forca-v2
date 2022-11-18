@@ -1,0 +1,12 @@
+<h4>Lista de perguntas: </h4>
+<hr>
+<a href="/game/questions/add"><button class="btn btn-success">Nova Pergunta</button></a>
+<hr>
+{{#each question}}
+
+    <h4>Pergunta: {{question}}</h4> 
+    <hr>
+{{else}}
+
+    <h4>Nenhuma pergunta encontrada</h4>
+{{/each}}
