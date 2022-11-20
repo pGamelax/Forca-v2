@@ -93,6 +93,10 @@ function checkInputs() {
         enter.disabled = true;
         checkLetters();
         checkWin();
+
+        setTimeout( () => {
+            clearAll();
+        }, 3000);
     }
 }
 const letterRight = []

@@ -51,5 +51,15 @@ router.post("/questions/add/new", (req, res) => {
     }
 })
 
+router.get("/questions/:id", (req, res) => {
+    Question.destroy({
+        where: {'id': req.params.id}
+    }).then(()=>{
+        req.flash("success_msg", "Excluido com sucesso!")
+        res.redirect('/game/questions')
+    }).catch((err) => {
+        res.send("Houve um erro: "+err)
+    })
+})
 
 module.exports = router;
