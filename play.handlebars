@@ -5,7 +5,7 @@
 
 {{#each question}}
   <div class="container">
-    <section class="grid">
+    <section>
       <div class="main">
         <div id="errors"></div>
         <div class="card">
@@ -15,11 +15,11 @@
         </div>
         <div id="row-input" class="mt-5 ">
           <input value="{{answer}}" id="answer" type="hidden">
-          <input type="text" inputmode="none" id="letter-1" class="input-text" maxlength="1">
-          <input type="text" inputmode="none" id="letter-2" class="input-text" maxlength="1">
-          <input type="text" inputmode="none" id="letter-3" class="input-text" maxlength="1">
-          <input type="text" inputmode="none" id="letter-4" class="input-text" maxlength="1">
-          <input type="text" inputmode="none" id="letter-5" class="input-text" maxlength="1">
+          <input type="text" id="letter-1" class="input-text" maxlength="1">
+          <input type="text" id="letter-2" class="input-text" maxlength="1">
+          <input type="text" id="letter-3" class="input-text" maxlength="1">
+          <input type="text" id="letter-4" class="input-text" maxlength="1">
+          <input type="text" id="letter-5" class  ="input-text" maxlength="1">
         </div>
         <div class="mt-5">
           <div class="keyboard">
@@ -57,13 +57,9 @@
             <div id="checkAnswer" class="btn btn-enter m-2"><p>enter</p></div>
           </div>
         </div>
-        </div>
+    </div>
       </div>
     </section>
-    <div class="ganhou none">
-        <p id="textoVitoria" class="mt-4"></p>
-        <button id="newGame" class="btn btn-success mt-5">Novo Jogo</button>
-      </div>  
   </div>
 {{else}}
     <h4>Não a perguntas para jogar!</h4>

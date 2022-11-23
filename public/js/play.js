@@ -10,6 +10,10 @@ const showError = document.getElementById("errors")
 const enter = document.getElementById("checkAnswer")
 const clear = document.getElementById("clearInput")
 
+// 
+var ganhou = document.querySelector(".ganhou")
+var txtVitoria = document.getElementById("textoVitoria")
+var grid = document.querySelector(".grid")
 //Pegar os valores digitados pelo jogador
 var letterOne = document.getElementById('letter-1');
 var letterTwo = document.getElementById('letter-2');
@@ -109,7 +113,11 @@ function checkWin(){
             if(lettersInput[i].classList.contains("letra-certa")){
                 letterRight.push('sim')
                 if(letterRight.length == 5 && letterRight[i] == "sim"){
-                    console.log("ganhou")
+                    if(letterRight.length == 5 && letterRight[i] == "sim"){
+                        ganhou.classList.remove("none")
+                        grid.classList.add("none")
+                        txtVitoria.innerText = `Parabéns, Você ganhou! A palavra era ' ${answer} '`
+                    }
                 }
             }
         }
@@ -152,6 +160,11 @@ function keyboardLetters(e){
     }
     
 }
+
+// função de novo jogo
+newGame.addEventListener('click', function(){
+    location.reload()
+})
     
 enter.addEventListener('click', checkInputs)
 clear.addEventListener('click', clearAll)
