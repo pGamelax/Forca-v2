@@ -7,6 +7,9 @@ const Question = db.mariadb.define('questions', {
     },
     answer: {
         type: db.Sequelize.STRING
+    },
+    categorie: {
+        type: db.Sequelize.STRING
     }
 })
 

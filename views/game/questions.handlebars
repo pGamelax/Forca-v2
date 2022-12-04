@@ -1,11 +1,13 @@
 <h4>Lista de perguntas: </h4>
 <hr>
 <a href="/game/questions/add"><button class="btn btn-success">Nova Pergunta</button></a>
+<a href="/game/categories"><button class="btn btn-success">Categorias</button></a>
 <hr>
 {{#each question}}
 
-    <h4>Pergunta: {{question}}</h4> 
-    <a href="/game/questions/{{id}}"><button class="btn btn-danger">Deletar</button></a>
+    <p><strong>Pergunta:</strong> {{question}}</p> 
+    <p><strong>Categoria:</strong> {{categorie}}</p>
+    <a href="/game/questions/{{id}}"><button class="btn btn-danger mt-1">Deletar</button></a>
     <hr>
 {{else}}
 

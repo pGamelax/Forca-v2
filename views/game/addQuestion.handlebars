@@ -7,12 +7,21 @@
 <h4>Nova Pergunta</h4>
 <div class="card">
     <div class="card-body">
-        <form action="/game/questions/add/new" method="POST">
+        <form action="/game/questions/add" method="POST">
             <label for="question" class="mt-1">Pergunta:</label>
             <input type="text" name="question" placeholder="Escreva uma pergunta" class="form-control mt-1">
-            <label for="answer" class="mt-1">Pergunta:</label>
+            <label for="answer" class="mt-1">Resposta:</label>
             <input type="text" name="answer" placeholder="Escreva a respostas" class="form-control mt-1">
+            <label for="categories">Categorias: </label>
+            <select name="categories" class="form-select">
+                {{#each categories}}
+                <option value="{{name}}" >{{name}}</option>
+                {{else}}
+                <option value="0">Nenhuma categoria registrada</option>
+                {{/each}}
+            </select>
             <button class="btn btn-success mt-4" type="submit">Adicionar pergunta</button>
+            <a href="/game/questions" class="btn btn-danger mt-4">Cancelar</a>
         </form>
     </div>
 </div>
