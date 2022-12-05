@@ -41,7 +41,7 @@ router.post("/questions/add", (req, res) => {
     if(req.body.categories   == "0"){
         erros.push({texto: "Categoria invalida, registre uma categoria"})
     }
-    if(req.body.answer.length < 4 || req.body.answer.length > 10 ){
+    if(req.body.answer.length < 4 || req.body.answer.length > 8 ){
         erros.push({texto: "Digite uma respostas de 4 a 10 letras"})
     }
     
