@@ -14,20 +14,20 @@ router.get("/play", async (req, res) =>{
    
     
 })
-router.get("/questions", (req, res) =>{
+router.get("/questions", async (req, res) =>{
     Question.findAll().then((question) => {
         res.render("game/questions", {question:question});
     })
     
 })
-router.get("/questions/add", (req, res) => {
+router.get("/questions/add", async (req, res) => {
     Categories.findAll().then((categories) => {
         res.render("game/addQuestion", {categories:categories})
     })
     
 })
 
-router.post("/questions/add", (req, res) => {
+router.post("/questions/add", async (req, res) => {
     var erros = [];
 
     if(!req.body.question || typeof req.body.question == undefined || req.body.question == null){
@@ -63,7 +63,7 @@ router.post("/questions/add", (req, res) => {
     }
 })
 
-router.get("/questions/:id", (req, res) => {
+router.get("/questions/:id", async (req, res) => {
     Question.destroy({
         where: {'id': req.params.id}
     }).then(()=>{
@@ -74,7 +74,7 @@ router.get("/questions/:id", (req, res) => {
     })
 })
 
-router.get("/categories", (req, res)=>{
+router.get("/categories", async (req, res)=>{
     Categories.findAll().then((categories) => {
         res.render("game/categories", {categories:categories})
     })
@@ -83,7 +83,7 @@ router.get("/categories/add", (req, res) => {
     res.render("game/addCategories")    
 })
 
-router.post("/categories/add", (req, res) => {
+router.post("/categories/add", async (req, res) => {
     var erros = [];
 
     if(!req.body.categorie || typeof req.body.categorie == undefined || req.body.categorie == null){
@@ -107,7 +107,7 @@ router.post("/categories/add", (req, res) => {
     }
 })
 
-router.get("/categories/:id", (req, res) => {
+router.get("/categories/:id", async (req, res) => {
     Categories.destroy({
         where: {'id': req.params.id}
     }).then(()=>{
