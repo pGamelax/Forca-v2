@@ -56,6 +56,7 @@ function checkLetters(){
     // Pegando os valores digitado pelo usuario
     for(i = 0; i < answer.length; i++){
         lettersInput.push(document.getElementById(i).value)
+        console.log(lettersInput)
     }
     // Remover focus do input
     $(".input-text").blur()
@@ -113,12 +114,10 @@ function checkWin(){
         for (i = 0; i < answer.length; i++){
             if(document.getElementById(i).classList.contains("letra-certa")){
                 letterRight.push('sim')
-                if(letterRight.length == 5 && letterRight[i] == "sim"){
-                    if(letterRight.length == 5 && letterRight[i] == "sim"){
-                        ganhou.classList.remove("none")
-                        grid.classList.add("none")
-                        txtVitoria.innerText = `Parabéns, Você ganhou! A palavra era ' ${answer} '`
-                    }
+                if(letterRight.length == answer.length && letterRight[i] == "sim"){
+                    ganhou.classList.remove("none")
+                    grid.classList.add("none")
+                    txtVitoria.innerText = `Parabéns, Você ganhou! A palavra era ' ${answer} '`
                 }
             }
         }
@@ -135,6 +134,7 @@ function clearAll(){
         document.getElementById(i).classList.remove("letra-errada")
         letterRight.splice(i)
         lettersAnswer.splice(i)
+        lettersInput.splice(i)
     }
     for(i = 0; i < answer.length; i++){
         lettersAnswer.push(answer.slice(i, (i+1)))
